@@ -1,0 +1,46 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Happyness</title>
+    <head>
+      <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+      </style>
+      </head>
+  </head>
+
+  <body>
+    <!-- ... -->
+    <script src="/main.js"></script>
+    <h1>Happyness today</h1>
+
+    <form action="/quotes" method="POST">
+      <input type="text" placeholder="name" name="name" />
+      <input type="text" placeholder="happyness-out-of-10" name="happyness" />
+      <input type="text" placeholder="date" name="date"/>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+  <table>
+    <br>
+    <tr>
+      <th>Name</th>
+      <th>Happyness</th>
+      <th>Date</th>
+    </tr>
+    <% for(var i = 0; i < quotes.length; i++) {%>
+      <tr>
+      <!-- Output name from the iterated quote object -->
+      <td><%= quotes[i].name %></span>
+      <!-- Output quote from the iterated quote object -->
+      <td><%= quotes[i].happyness %></span>
+      <!-- Output quote from the iterated quote object -->
+      <td><%= quotes[i].date %></span>
+      </tr>
+  <% } %>
+  </table>
+</html>
